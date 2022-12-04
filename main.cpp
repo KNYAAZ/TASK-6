@@ -1,14 +1,14 @@
 ﻿#include <iostream>
 using namespace std;
-double my_pow(double F, unsigned int N)
+double my_pow(double F, int N)
 {
 	double pow;
-	pow = F;
-	for (int i = 1;i < N; ++i)
+	pow = 1;
+	for (int i = 0;i < N; ++i)
 	{
-		F *= pow;
+		pow *= F;
 	}
-	return F;
+	return pow;
 }
 int main ()
 {
@@ -19,11 +19,6 @@ cout << "Введите число (дробное): " << endl;
 cin >> F;
 cout << "Введите степень числа (положительную): " << endl;
 cin >> N;
-if (N < 0)
-{
-	cout << "Ошибка" << endl;
-	system("pause");
-}
 cout << my_pow(F, N) << endl;
 return 0;
 }
